@@ -21,3 +21,8 @@ packages/server/public/avatar/*_*.*
 !packages/server/public/manifest.json
 !packages/server/public/index.html
 !packages/server/public/PrivacyPolicy.html
+
+data/mongo/*
+!data/mongo/.gitkeep
+data/redis/*
+!data/redis/.gitkeep

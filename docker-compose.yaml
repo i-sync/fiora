@@ -1,17 +1,28 @@
-version: '3.2'
-
 services:
   mongodb:
     image: mongo
+    container_name: fiora_db
+    volumes:
+      - ${PWD}/data/mongo:/data/db
     restart: always
+
   redis:
     image: redis
+    container_name: fiora_redis
+    volumes:
+      - ${PWD}/data/redis:/data
     restart: always
+
   fiora:
     build: .
-    restart: always
+    container_name: fiora
     ports:
-      - "9200:9200"
+      - "127.0.0.1:9200:9200"
     environment:
       - Database=mongodb://mongodb/fiora
       - RedisHost=redis
+      - Administrator=admin
+    depends_on:
+      - mongodb
+      - redis
+    restart: always
