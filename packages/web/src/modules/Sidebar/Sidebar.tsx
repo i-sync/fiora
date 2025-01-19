@@ -1,25 +1,25 @@
+import loadable from '@loadable/component';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import loadable from '@loadable/component';
 
 import { isMobile } from '@fiora/utils/ua';
-import { State } from '../../state/reducer';
-import useIsLogin from '../../hooks/useIsLogin';
 import Avatar from '../../components/Avatar';
-import Tooltip from '../../components/Tooltip';
 import IconButton from '../../components/IconButton';
-import OnlineStatus from './OnlineStatus';
-import useAction from '../../hooks/useAction';
-import socket from '../../socket';
 import Message from '../../components/Message';
+import Tooltip from '../../components/Tooltip';
+import useAction from '../../hooks/useAction';
+import useIsLogin from '../../hooks/useIsLogin';
+import socket from '../../socket';
+import { State } from '../../state/reducer';
+import OnlineStatus from './OnlineStatus';
 
+import About from './About';
 import Admin from './Admin';
 import Download from './Download';
 import Reward from './Reward';
-import About from './About';
 
-import Style from './Sidebar.less';
 import useAero from '../../hooks/useAero';
+import Style from './Sidebar.less';
 
 const SelfInfoAsync = loadable(
     () =>
@@ -112,25 +112,6 @@ function Sidebar() {
                                 onClick={() => toggleAdminDialogVisible(true)}
                             />,
                         )}
-                    <Tooltip
-                        placement="right"
-                        mouseEnterDelay={0.3}
-                        overlay={<span>源码</span>}
-                    >
-                        <a
-                            className={Style.linkButton}
-                            href="https://github.com/yinxin630/fiora"
-                            target="_black"
-                            rel="noopener noreferrer"
-                        >
-                            <IconButton
-                                width={40}
-                                height={40}
-                                icon="github"
-                                iconSize={26}
-                            />
-                        </a>
-                    </Tooltip>
                     {renderTooltip(
                         '下载APP',
                         <IconButton
@@ -139,16 +120,6 @@ function Sidebar() {
                             icon="app"
                             iconSize={28}
                             onClick={() => toggleDownloadDialogVisible(true)}
-                        />,
-                    )}
-                    {renderTooltip(
-                        '打赏',
-                        <IconButton
-                            width={40}
-                            height={40}
-                            icon="dashang"
-                            iconSize={26}
-                            onClick={() => toggleRewardDialogVisible(true)}
                         />,
                     )}
                     {renderTooltip(

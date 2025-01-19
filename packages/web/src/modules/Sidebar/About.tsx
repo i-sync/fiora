@@ -20,26 +20,6 @@ function About(props: AboutProps) {
         >
             <div>
                 <div className={Common.block}>
-                    <p className={Common.title}>作者</p>
-                    <a
-                        href="https://suisuijiang.com"
-                        target="_black"
-                        rel="noopener noreferrer"
-                    >
-                        https://suisuijiang.com
-                    </a>
-                </div>
-                <div className={Common.block}>
-                    <p className={Common.title}>如何搭建</p>
-                    <a
-                        href="https://yinxin630.github.io/fiora/zh-Hans/"
-                        target="_black"
-                        rel="noopener noreferrer"
-                    >
-                        https://yinxin630.github.io/fiora/zh-Hans/
-                    </a>
-                </div>
-                <div className={Common.block}>
                     <p className={Common.title}>隐私条款</p>
                     <a
                         href="/PrivacyPolicy.html"
@@ -70,20 +50,6 @@ function About(props: AboutProps) {
                     <ul>
                         <li>-roll [number]: 掷点</li>
                         <li>-rps: 石头剪刀布</li>
-                    </ul>
-                </div>
-                <div className={Common.block}>
-                    <p className={Common.title}>友情链接</p>
-                    <ul>
-                        <li>
-                            <a
-                                href="https://wangyaxing.cn/"
-                                target="_black"
-                                rel="noopener noreferrer"
-                            >
-                                木子星兮
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
